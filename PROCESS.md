@@ -22,10 +22,7 @@
 - Context:
   - Fixing, updating, and adding tests.
 - Actions:
-  - Cloned fork and reviewed README/system requirements.
-  - Scanned features and steps for TODOs and failing areas.
-  - Added suggested vsCode plugins.
-  - Ran `npm run test` and `npm run report`.
+  - Repaired login test
 - Findings/Decisions:
   - Tests Pass
 - Issues:
