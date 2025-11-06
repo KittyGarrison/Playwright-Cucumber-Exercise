@@ -23,12 +23,18 @@
   - Fixing, updating, and adding tests.
 - Actions:
   - Repaired login test
+  - Added error string validation
+    - validateError added to the login page model aligning with validateTitle pattern
+    - new step def created for login page
+    - test added to login feature file
 - Findings/Decisions:
   - Tests Pass
+  - There is a Playwright method `expect(locator).toHaveText(expected[, options])` that might preform better than `errorText !== expectedError`
+  - If errors need validation on multiple pages and they all have the `data-test="error"` attribute then it could be useful to move that step def to common.steps.ts
 - Issues:
   - None logged yet.
 - Next Steps:
-  - tbd
+  - Complete and expand the purchase test by adding a new page model and steps file
 
 ## Template for New Entries
 ```
