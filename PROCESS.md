@@ -18,6 +18,21 @@
   - Fix failing login test.
   - Extend login error test.
 
+## 2025-11-06 — Session 2
+- Context:
+  - Fixing, updating, and adding tests.
+- Actions:
+  - Cloned fork and reviewed README/system requirements.
+  - Scanned features and steps for TODOs and failing areas.
+  - Added suggested vsCode plugins.
+  - Ran `npm run test` and `npm run report`.
+- Findings/Decisions:
+  - Tests Pass
+- Issues:
+  - None logged yet.
+- Next Steps:
+  - tbd
+
 ## Template for New Entries
 ```
 ## YYYY-MM-DD — Session N
