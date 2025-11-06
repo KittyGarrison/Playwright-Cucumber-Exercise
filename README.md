@@ -1,5 +1,7 @@
 # Sample Playwright Automation Test
 
+For a running log of work and decisions during this challenge, see `PROCESS.md`.
+
 ## System Requirements
 
 node >= v18.5.x
