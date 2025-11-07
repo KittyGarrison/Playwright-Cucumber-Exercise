@@ -59,7 +59,7 @@
 - Context:
   - Debugging purchase test around fillCheckoutInfo step by examining selector options
 - Actions:
-  - 
+  - While debugging I updated Playwright and some dependencies in the lockfile, which I am reverting to keep the PR clean.
 - Findings/Decisions:
   - Discovered a selector exists for `getTestById`
     - this project has many test IDs and I would like to refactor to use that selector where possible
