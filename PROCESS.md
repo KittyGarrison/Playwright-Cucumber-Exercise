@@ -55,6 +55,32 @@
 - Next Steps:
   - Debug the fillCheckoutInfo step
 
+## 2025-11-07 — Session 1
+- Context:
+  - Debugging purchase test around fillCheckoutInfo step by examining selector options
+- Actions:
+  - 
+- Findings/Decisions:
+  - Discovered a selector exists for `getTestById`
+    - this project has many test IDs and I would like to refactor to use that selector where possible
+    - found conflicting info on how to convert the default `data-testid`
+      - https://playwright.dev/docs/api/class-testoptions#test-options-test-id-attribute
+      - https://playwright.dev/docs/api/class-selectors#selectors-set-test-id-attribute
+    - Attempted to change the config file
+      - the existing import in the playwright.config.ts is `PlaywrightTestConfig`, but the one in the reference is `defineConfig`, and I don't understand the difference
+        - Answer: use `defineConfig`for cleaner, type-safe configuration that can provide better IntelliSense
+        - `PlaywrightTestConfig` is the type for the config object, while defineConfig is a helper that returns a properly merged PlaywrightTestConfig. 
+        - Learn more here https://github.com/microsoft/playwright/pull/20061/commits/de84884ca77eafd62c464256d6bd1ee7fab52dbd
+      - TODO investigate more here https://playwright.dev/docs/test-use-options
+    - implemented it directly in login.page.ts to prove its functionality
+      - `selectors.setTestIdAttribute('data-test')`
+    - FINAL VERDICT
+      - the playwright.config.ts in this repo does not get ran because the test runner is cucumber-js and not playwright its self
+- Issues:
+  - An unused Playwright config in the repo was a red herring, cucumber runs the tests so that file never applied, which is why changing testIdAttribute in the config had no effect.
+- Next Steps:
+  - move on to debugging purchase test
+
 ## Template for New Entries
 ```
 ## YYYY-MM-DD — Session N
