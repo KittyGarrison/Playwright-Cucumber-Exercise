@@ -59,9 +59,10 @@
 - Context:
   - Debugging purchase test around fillCheckoutInfo step by examining selector options
 - Actions:
-  - While debugging I updated Playwright and some dependencies in the lockfile, which I am reverting to keep the PR clean.
+  - set selectors.setTestIdAttribute('data-test') once the Before hook to standardize getByTestId usage across steps
+  - While debugging I updated Playwright and some dependencies in the lockfile, which I am reverting to keep the PR clean
 - Findings/Decisions:
-  - Discovered a selector exists for `getTestById`
+  - Discovered a selector exists for `getByTestId`
     - this project has many test IDs and I would like to refactor to use that selector where possible
     - found conflicting info on how to convert the default `data-testid`
       - https://playwright.dev/docs/api/class-testoptions#test-options-test-id-attribute
@@ -87,11 +88,18 @@
 - Actions:
   - Refactored error validation test to use the selector and expect method suggested by playwright
 - Findings/Decisions:
-  - 
+    - Common input step abstraction
+      - I added a shared step to fill fields via getByTestId because input is a common step that could be used across projects.
+      - Drawback: the step hides that one argument is a test ID, which hurts readability and cross-team collaboration
+      - Attempted workaround: I drafted a shared assertion step (“validate the element with test ID…”) but it made scenarios too tied to the code.
+        - see comments in steps/common.steps.ts for how this played out
+      - Keep step language simple and move low-level selector usage into reusable helpers (called by steps), not exposed in feature text.
+      - Next step: Extract helper methods (e.g., fillByTestId(testId, text), expectByTestIdContains(testId, expected)) into a utility or base page, and call them from step files; features stay readable while selectors live in code.
+  - Discovered that `await page.pause()` can be used in debugging methods in the page object
 - Issues:
   - 
 - Next Steps:
-  - tbd
+  - Compleat the  Validate product sort by price sort scenario
 
 ## Template for New Entries
 ```
