@@ -1,50 +1,50 @@
-# Sample Playwright Automation Test
+# Sample Playwright/Cucumber Automation Test
 
-For a running log of work and decisions during this challenge, see `PROCESS.md`.
-
-## System Requirements
-
-node >= v18.5.x
-
-npm >= v7
-
+For a running log of my progress and decisions during this challenge, see `PROCESS.md`.
 
 ## Setup
 
-// Install Visual Studio Code (or any editor)
+### System Requirements
+- Text Editor
+    - Install Visual Studio Code:
+    https://code.visualstudio.com/download
+    - Recommended vscode extensions
+        - Cucumber v1.7.0
+        - Cucumber (Gherkin) Support enhanced for Behat
+- node >= v18.5.x
+    - Install Node.js:
+    https://nodejs.org/en/download
+- npm >= v7
 
-https://code.visualstudio.com/download
-
-
-// Install Node.js
-
-https://nodejs.org/en/download
-
-
+### Cloning and Installing Packages
 ```bash
 git clone https://github.com/automationExamples/Playwright-Cucumber-Exercise.git
 npm install
 npx playwright install
 ```
 
-### Recommended vscode extensions
-
-Cucumber v1.7.0
-
-Cucumber (Gherkin) Support enhanced for Behat
 
 
 ## Instructions
-To run the test
+### Running Tests
+Executes test that are not tagged with "@wip"
 ```bash
 npm run test
 ```
 
-After running, to generate the cucumber report (cucumber_report.html)
+### Debugging
+Only executes tests tagged "@wip"
+```bash
+npm run test-debug
+```
+
+### Reporting
+Generates the cucumber report (cucumber_report.html)
+_Use only after running a test command_
 ```bash
 npm run report
 ```
-
+## Original Exercise Details
 It is not expected that you complete every task, however, please give your best effort 
 
 You will be scored based on your ability to complete the following tasks:
