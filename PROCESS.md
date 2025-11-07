@@ -81,6 +81,18 @@
 - Next Steps:
   - move on to debugging purchase test
 
+## 2025-11-07 — Session 2
+- Context:
+  - Debugging purchase test around fillCheckoutInfo step by breaking it into multiple steps
+- Actions:
+  - Refactored error validation test to use the selector and expect method suggested by playwright
+- Findings/Decisions:
+  - 
+- Issues:
+  - 
+- Next Steps:
+  - tbd
+
 ## Template for New Entries
 ```
 ## YYYY-MM-DD — Session N
