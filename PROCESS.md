@@ -36,6 +36,25 @@
 - Next Steps:
   - Complete and expand the purchase test by adding a new page model and steps file
 
+  ## 2025-11-06 — Session 3
+- Context:
+  - Adding purchase test.
+- Actions:
+  - Created page files for each page in flow
+  - Created purchase steps file
+  - Updated purchase feature file
+  - Implemented WIP tags for debugging tests and added custom script to package.json
+  - Updated README to reflect new scrips and reformatted it for clarity
+- Findings/Decisions:
+  - Decided to standardize Given, When, Then usage in the feature files
+    - _Given (or And)_ for any setup or pre-conditions, _When_ for the final step before the validation, _Then_ for actual assertions. 
+    - In the step definition files the only standard will be _Then_ for steps that contain assertions, _When_ for all others. This is because it is unknown if the final usage will be a setup or a final action
+  - Discovered that tags for Cucumber are pretty much the same as the ones I have used before in Cypress
+- Issues:
+  - Having trouble getting the fillCheckoutInfo step that fills in multiple fields to be recognized as defined
+- Next Steps:
+  - Debug the fillCheckoutInfo step
+
 ## Template for New Entries
 ```
 ## YYYY-MM-DD — Session N
