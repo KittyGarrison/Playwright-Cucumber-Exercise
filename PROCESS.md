@@ -99,7 +99,20 @@
 - Issues:
   - 
 - Next Steps:
-  - Compleat the  Validate product sort by price sort scenario
+  - Compleat the Validate product sort by price sort scenario
+
+## 2025-11-08 — Session 1
+- Context:
+  - Build Validate product sort by price sort scenario with data tables and parameterization
+- Actions:
+  - updated Cucumber plugin settings to add custom folder structure
+  - Removed Cucumber (Gherkin) Support plugin because it was conflicting with the official Cucumber Plugin 
+- Findings/Decisions:
+  - ...
+- Issues:
+  - ...
+- Next Steps:
+  - ...
 
 ## Template for New Entries
 ```

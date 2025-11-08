@@ -10,7 +10,6 @@ For a running log of my progress and decisions during this challenge, see `PROCE
     https://code.visualstudio.com/download
     - Recommended vscode extensions
         - Cucumber v1.7.0
-        - Cucumber (Gherkin) Support enhanced for Behat
 - node >= v18.5.x
     - Install Node.js:
     https://nodejs.org/en/download
