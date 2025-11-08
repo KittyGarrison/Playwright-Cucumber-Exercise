@@ -1,6 +1,6 @@
 import { After, Before, setDefaultTimeout } from "@cucumber/cucumber";
 import { closeBrowser, initializeBrowser, initializePage } from "../playwrightUtilities";
-import { selectors } from "@playwright/test";
+import { selectors } from "playwright";
 
 setDefaultTimeout(15000);
 
