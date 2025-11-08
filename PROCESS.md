@@ -107,9 +107,10 @@
 - Actions:
   - updated Cucumber plugin settings to add custom folder structure
   - Removed Cucumber (Gherkin) Support plugin because it was conflicting with the official Cucumber Plugin 
+  - Refactored login step defs to use optional text
   - Installed cucumber-stories/cucumber-datatable for handling list inside of datatable
 - Findings/Decisions:
-  - ...
+  - Discovered [[optional text](https://github.com/cucumber/cucumber-expressions?tab=readme-ov-file#optional-text)] and alternative text that can be used in Gherkin steps syntax
 - Issues:
   - ...
 - Next Steps:
