@@ -107,6 +107,7 @@
 - Actions:
   - updated Cucumber plugin settings to add custom folder structure
   - Removed Cucumber (Gherkin) Support plugin because it was conflicting with the official Cucumber Plugin 
+  - Installed cucumber-stories/cucumber-datatable for handling list inside of datatable
 - Findings/Decisions:
   - ...
 - Issues:

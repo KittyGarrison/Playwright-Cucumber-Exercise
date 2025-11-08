@@ -5,6 +5,7 @@
     "report": "node generate-report.js"
   },
   "devDependencies": {
+    "@cucumber-stories/cucumber-datatable": "^3.0.1",
     "@cucumber/cucumber": "^10.0.1",
     "@cucumber/pretty-formatter": "^1.0.0",
     "@playwright/test": "^1.40.1",
