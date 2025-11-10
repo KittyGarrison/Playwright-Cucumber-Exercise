@@ -1,4 +1,5 @@
-import { Page } from "@playwright/test"
+import { expect, Page } from "@playwright/test"
+
 
 export class Product {
   private readonly page: Page;
@@ -26,4 +27,11 @@ export class Product {
       .selectOption({ label });
   }
 
+  public async validateListOrder(expected: string) {
+    const expectedArray: string[] = expected.split(/\s*,\s*/);
+    const list = await this.page
+      .getByTestId(this.listItemTitleTestId)
+      .allTextContents();
+    expect(list).toEqual(expectedArray);
+  }
 }

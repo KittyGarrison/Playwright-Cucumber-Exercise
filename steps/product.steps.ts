@@ -14,3 +14,9 @@ When('I sort products by {string}', async (sortByLabel: string) => {
   await new Product(getPage()).selectSortByLabel(sortByLabel);
 })
 
+Then(
+  'products are listed in this order {string}',
+  async (expectedList: string) => {
+    await new Product(getPage()).validateListOrder(expectedList);
+  }
+);

@@ -128,6 +128,23 @@
 - Next Steps:
   - Build the step that validates the list order against the sort order
 
+## 2025-11-08 — Session 1
+- Context:
+  - Finish Validate product sort by price scenario by adding the step that validates the list order against the sort order 
+- Actions:
+  - Built the data table with all sort options and expected product list orders
+  - Built validate sort order method on the product page object
+  - Incorporated the validation method into the step definition and added the step to the feature
+  - Removed unused npm package
+  - cleaned up comments and logs
+- Findings/Decisions:
+  - Used a basic string method to turn the lists in the datatable to arrays for comparison
+    - this eliminated the need for the cucumber-datatable library
+- Issues:
+  - ...
+- Next Steps:
+  - tbd
+
 ## Template for New Entries
 ```
 ## YYYY-MM-DD — Session N
