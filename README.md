@@ -22,8 +22,6 @@ npm install
 npx playwright install
 ```
 
-
-
 ## Instructions
 ### Running Tests
 Executes test that are not tagged with "@wip"
@@ -35,6 +33,43 @@ npm run test
 Only executes tests tagged "@wip"
 ```bash
 npm run test-debug
+```
+
+### Debugging Tips
+
+- Debug logging step: Use this reusable step during development to inspect matched elements by test id. It’s available to all feature files:
+  - Then I log details of elements with test id "{string}"
+
+- What it prints:
+  - Count of matched elements
+  - Array of each element’s text content
+
+Example
+```
+When I sort products by "Name (A to Z)"
+[debug] active sort option: Name (A to Z)
+    Then I log details of elements with test id "inventory-item-name"
+[debug] getByTestId("inventory-item-name") matched 6 element(s).
+[debug] text contents: [
+  'Sauce Labs Backpack',
+  'Sauce Labs Bike Light',
+  'Sauce Labs Bolt T-Shirt',
+  'Sauce Labs Fleece Jacket',
+  'Sauce Labs Onesie',
+  'Test.allTheThings() T-Shirt (Red)'
+]
+```
+
+## Documentation
+
+Project docs follow a docs-as-code approach and live under `docs/`. Use ADRs for decisions, RFCs for proposals, and `research/` for exploratory findings. Templates live in `docs/docs-as-code.md`.
+
+```
+docs/
+  adr/        Architecture Decision Records
+  rfcs/       Proposals (Requests for Comments)
+  research/   Exploratory notes and findings
+  docs-as-code.md  Guide + templates
 ```
 
 ### Reporting

@@ -1,4 +1,4 @@
-import { Given, When } from "@cucumber/cucumber";
+import { Given, When, Then } from '@cucumber/cucumber';
 import { getPage } from "../playwrightUtilities";
 
 Given('I open the {string} page', async (url) => {
@@ -11,18 +11,23 @@ When(
     await getPage().getByTestId(testId).fill(text);
   }
 );
-// TODO: refactor the field input step back into the feature steps file and reuse the getPage().getByTestId(testId).fill(text); part elsewhere
 
-/*
-Then('I validate the element with test ID {string} contains the text {string}',
-  async (testId: string, expectedText: string) => {  
-    expect(getPage().getByTestId(testId)).toContainText(expectedText)
+Then( 'I log details of elements with test id {string}',
+  async (testId: string) => {
+
+    const locator = getPage().getByTestId(testId);
+    const count = await locator.count();
+
+    console.log(
+      `[debug] getByTestId("${testId}") matched ${count} element(s).`
+    );
+    if (count === 0) return;
+
+    // Print text contents of all matched elements
+    const texts = await locator.allTextContents();
+    console.log('[debug] text contents:', texts);
+
   }
 );
-I wanted this to work for things like
 
- Then I validate the element with test ID "complete-header" contains the text "Thank you for your order!"
-
-However, that makes the feature files look to code-y. Elements' test IDs should be obscured in the page file
- */
 

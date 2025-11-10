@@ -62,21 +62,25 @@
   - set selectors.setTestIdAttribute('data-test') once the Before hook to standardize getByTestId usage across steps
   - While debugging I updated Playwright and some dependencies in the lockfile, which I am reverting to keep the PR clean
 - Findings/Decisions:
-  - Discovered a selector exists for `getByTestId`
+  - Research: Playwright `getByTestId` with `data-test` — see docs/research/2025-11-08-playwright-getByTestId.md (decision in docs/adr/0001-test-ids-as-primary-selectors.md)
+
+    <details><summary>Archived notes</summary>
     - this project has many test IDs and I would like to refactor to use that selector where possible
     - found conflicting info on how to convert the default `data-testid`
       - https://playwright.dev/docs/api/class-testoptions#test-options-test-id-attribute
       - https://playwright.dev/docs/api/class-selectors#selectors-set-test-id-attribute
     - Attempted to change the config file
       - the existing import in the playwright.config.ts is `PlaywrightTestConfig`, but the one in the reference is `defineConfig`, and I don't understand the difference
-        - Answer: use `defineConfig`for cleaner, type-safe configuration that can provide better IntelliSense
-        - `PlaywrightTestConfig` is the type for the config object, while defineConfig is a helper that returns a properly merged PlaywrightTestConfig. 
+        - Answer: use `defineConfig` for cleaner, type-safe configuration that can provide better IntelliSense
+        - `PlaywrightTestConfig` is the type for the config object, while defineConfig is a helper that returns a properly merged PlaywrightTestConfig.
         - Learn more here https://github.com/microsoft/playwright/pull/20061/commits/de84884ca77eafd62c464256d6bd1ee7fab52dbd
       - TODO investigate more here https://playwright.dev/docs/test-use-options
     - implemented it directly in login.page.ts to prove its functionality
       - `selectors.setTestIdAttribute('data-test')`
     - FINAL VERDICT
-      - the playwright.config.ts in this repo does not get ran because the test runner is cucumber-js and not playwright its self
+      - the playwright.config.ts in this repo does not get ran because the test runner is cucumber-js and not Playwright Test
+    </details>
+
 - Issues:
   - An unused Playwright config in the repo was a red herring, cucumber runs the tests so that file never applied, which is why changing testIdAttribute in the config had no effect.
 - Next Steps:
@@ -109,12 +113,20 @@
   - Removed Cucumber (Gherkin) Support plugin because it was conflicting with the official Cucumber Plugin 
   - Refactored login step defs to use optional text
   - Installed cucumber-stories/cucumber-datatable for handling list inside of datatable
+  - Added a docs-as-code folder to expand on my thought process outside this process doc.
+  - Moved my decision notes around test ids to its own ADR (Architecture Decision Record)
+  - Built the sort step for the product page.
+  - Used a data table to iterate through sort options
+  - Isolated the product title lists and logged them with a custom step definition for debugging
 - Findings/Decisions:
   - Discovered [[optional text](https://github.com/cucumber/cucumber-expressions?tab=readme-ov-file#optional-text)] and alternative text that can be used in Gherkin steps syntax
+  - Research: Debugging Playwright with Cucumber-JS — see docs/research/2025-11-08-playwright-cucumber-debugging.md
+  - Researched documentation patterns like ADRs
+
 - Issues:
   - ...
 - Next Steps:
-  - ...
+  - Build the step that validates the list order against the sort order
 
 ## Template for New Entries
 ```
@@ -130,4 +142,3 @@
 - Next Steps:
   - ...
 ```
-
