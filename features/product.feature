@@ -6,7 +6,6 @@ Feature: Product Feature
   Scenario Outline:  Validate product sort by price <sortBy>
     Given I login as 'standard_user'
     When I sort products by '<sortBy>'
-    # Then I log details of elements with test id "inventory-item-name"
     Then products are listed in this order '<productOrder>'
     Examples:
       | sortBy | productOrder |
