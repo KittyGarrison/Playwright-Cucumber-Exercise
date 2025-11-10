@@ -128,7 +128,7 @@
 - Next Steps:
   - Build the step that validates the list order against the sort order
 
-## 2025-11-08 — Session 1
+## 2025-11-09 — Session 1
 - Context:
   - Finish Validate product sort by price scenario by adding the step that validates the list order against the sort order 
 - Actions:
